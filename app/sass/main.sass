@@ -386,76 +386,80 @@ section
         &-main
             h1
                 margin-top: gem(240)
-    .about-main
-        .sliderAbout
-            display: flex
-            background: var(--color-white)
+    .about
+        .book:first-child
             margin-top: gem(120)
-            width: gem(1440)
-            height: gem(660)
-            &-text
+        &-main
+            .sliderAbout
                 display: flex
-                padding-left: gem(240)
-                width: gem(720)
-                flex-direction: column
-                &-element
-                    padding-top: 0
-                    max-width: gem(240)
-                    margin-bottom: gem(68)
+                background: var(--color-white)
+                margin-top: gem(240)
+                width: gem(1440)
+                height: gem(660)
+                &-text
+                    display: flex
+                    padding-left: gem(240)
+                    width: gem(720)
+                    flex-direction: column
+                    &-element
+                        padding-top: 0
+                        max-width: gem(240)
+                        margin-bottom: gem(68)
+                        span, h3, p
+                            display: flex
+                        h2, span
+                            margin-bottom: gem(8)
+                        h3
+                            margin-bottom: gem(16)
+                    &-element:last-child
+                        margin-bottom: 0
+                &-pics
+                    display: flex
+                    width: gem(720)
+                    img
+                        width: 100%
+                        height: auto
+            .cards
+                display: flex
+                margin-top: gem(240)
+                &-left, &-right, &-middle-top, &-middle-bottom
+                    display: flex
+                    flex-direction: column
+                    padding: gem(102) gem(60)
+                    width: gem(480)
                     span, h3, p
                         display: flex
                     h2, span
                         margin-bottom: gem(8)
                     h3
                         margin-bottom: gem(16)
-                &-element:last-child
-                    margin-bottom: 0
-            &-pics
-                display: flex
-                width: gem(720)
-                img
-                    width: 100%
-                    height: auto
-        .cards
-            display: flex
-            margin-top: gem(240)
-            &-left, &-right, &-middle-top, &-middle-bottom
-                display: flex
-                flex-direction: column
-                padding: gem(102) gem(60)
-                width: gem(480)
-                span, h3, p
+                &-left
+                    background: var(--color-blue)
+                &-middle
                     display: flex
-                h2, span
-                    margin-bottom: gem(8)
-                h3
-                    margin-bottom: gem(16)
-            &-left
-                background: var(--color-blue)
-            &-middle
-                display: flex
-                flex-direction: column
-                &-bottom
-                    background: var(--color-yellow)
-            &-right
-                background: var(--color-blue)
-                position: relative
-                .button
-                    display: flex
-                    position: absolute
-                    bottom: 0
-                    left: 0
-                    width: 100%
-                    height: gem(120)
-                    background: var(--color-black)
-                    justify-content: center
-                    align-items: center
-                    transition: 0.3s all ease
-                    span
+                    flex-direction: column
+                    &-bottom
+                        background: var(--color-yellow)
+                        padding-top: gem(60)
+                &-right
+                    background: var(--color-blue)
+                    position: relative
+                    .button
                         display: flex
-                .button:hover
-                    background: var(--color-red)
-                    transition: 0.3s all ease
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        width: 100%
+                        height: gem(120)
+                        background: var(--color-black)
+                        justify-content: center
+                        align-items: center
+                        transition: 0.3s all ease
+                        span
+                            display: flex
+                    .button:hover
+                        background: var(--color-red)
+                        transition: 0.3s all ease
 .tastes
     height: gem(960)
     flex-direction: column
