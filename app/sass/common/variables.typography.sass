@@ -46,15 +46,24 @@
     --opacity-08:                    0.8
     --opacity-1:                     1
 
-// @media all and (max-width: 1024px)
+@media all and (max-width: 768px)
 
-//     \:root
-//         --font-size-h1:                  #{gem(32)}
-//         --font-size-h2:                  #{gem(20)}
-//         --font-size-label1:              #{gem(16)}
-//         --font-size-desc1:               #{gem(16)}
+    \:root
+        --font-size-h1:                  #{gem(48)}
+        --font-size-h4:                  #{gem(18)}
+        --font-size-desc3:               #{gem(16)}
 
-//         --line-height-h1:                #{gem(48)}
-//         --line-height-h2:                #{gem(32)}
-//         --line-height-label-1:           #{gem(24)}
-//         --line-height-desc1:             #{gem(24)}
+        --line-height-h1:                #{gem(62)}
+        --line-height-h4:                #{gem(26)}
+        --line-height-desc3:             #{gem(24)}
+
+@media all and (max-width: 480px)
+
+    \:root
+        --font-size-h1:                  #{gem(28)}
+        --font-size-h4:                  #{gem(18)}
+        --font-size-desc3:               #{gem(16)}
+
+        --line-height-h1:                #{gem(35)}
+        --line-height-h4:                #{gem(26)}
+        --line-height-desc3:             #{gem(24)}
