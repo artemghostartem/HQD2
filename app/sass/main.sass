@@ -1014,6 +1014,21 @@ section
 @media all and (max-width: 480px)
     .map
         margin: gem(112) 0 0 0
+        .info
+            &-right
+                &-element
+                    width: 100%
+                    &-top
+                        flex-direction: column
+                    &-middle
+                        margin-bottom: 0
+                    &-info:first-child
+                        margin-bottom: gem(20)
+                    &-info
+                        span
+                            max-width: gem(232)
+                &-element:last-child
+                    margin-top: 0
         &-main
             &-pics
                 width: 100%
