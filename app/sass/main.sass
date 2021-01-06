@@ -249,6 +249,7 @@ section
         &-pics
             display: flex
             width: gem(720)
+            position: relative
             img
                 width: 100%
                 height: auto
@@ -267,6 +268,38 @@ section
                 margin-bottom: gem(16)
     .book:first-child
         margin-top: gem(360)
+.sliderArrows
+    display: flex
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 6
+    &-prev, &-next
+        display: flex
+        width: gem(65)
+        height: gem(65)
+        justify-content: center
+        align-items: center
+        background: var(--color-white)
+        transition: all 0.3s ease
+        svg
+            width: gem(10)
+            height: gem(10)
+            rect
+                fill: var(--color-black)
+                transition: all 0.3s ease
+    &-next
+        svg
+            transform: rotate(180deg)
+    &-prev:hover, &-next:hover
+        background: var(--color-black)
+        transition: all 0.3s ease
+        svg rect
+            fill: var(--color-white)
+            transition: all 0.3s ease
+
+
+
 .progress
     display: flex
     flex-direction: column
@@ -493,6 +526,7 @@ section
                 &-pics
                     display: flex
                     width: gem(720)
+                    position: relative
                     img
                         width: 100%
                         height: auto
@@ -926,15 +960,15 @@ section
     .info
         display: flex
         margin-bottom: gem(120)
+        flex-direction: column
         &-left
             display: flex
-            flex-direction: column
-            margin-right: gem(100)
+            align-items: flex-end
             &-element
                 display: flex
                 flex-direction: column
-                margin-bottom: gem(60)
                 max-width: gem(436)
+                margin-right: gem(100)
                 h3
                     margin-bottom: gem(12)
                 p:nth-child(3)
@@ -943,13 +977,12 @@ section
                 margin-bottom: 0
         &-right
             display: flex
-            flex-direction: column
+            align-items: flex-end
+            margin-top: gem(60)
             &-element
                 display: flex
                 flex-direction: column
                 width: gem(480)
-                margin-top: gem(69)
-                margin-bottom: gem(52)
                 &-top
                     display: flex
                 &-middle
