@@ -256,8 +256,8 @@ section
             display: flex
             width: gem(720)
             flex-direction: column
-            padding-left: gem(120)
-            padding-top: gem(180)
+            padding: gem(143) gem(120)
+            position: relative
             h2, h3, p
                 display: flex
                 max-width: gem(436)
@@ -270,6 +270,59 @@ section
 .progress
     display: flex
     flex-direction: column
+    max-width: gem(480)
+    position: relative
+    margin-top: gem(40)
+    &-element
+        display: flex
+        width: gem(480)
+        position: relative
+        flex-direction: column
+        &-stage
+            display: flex
+            margin-bottom: gem(10)
+            justify-content: space-between
+            &-button
+                display: flex
+                flex-direction: column
+                justify-content: flex-end
+                align-items: center
+                cursor: pointer
+                span
+                    margin-top: gem(10)
+            &-button:hover
+                span
+                    color: var(--color-red)
+            &-button:nth-child(1)
+                img
+                    width: gem(56)
+                    height: auto
+            &-button:nth-child(2)
+                img
+                    width: gem(54)
+                    height: auto
+            &-button:nth-child(3)
+                img
+                    width: gem(68)
+                    height: auto
+        &-redLine
+            display: flex
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 50%
+            height: gem(2)
+            background: var(--color-red)
+            z-index: 6
+        &-line
+            display: flex
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: gem(2)
+            background: var(--color-gray)
+            z-index: 5
 .footer
     display: flex
     flex-direction: column
@@ -497,7 +550,7 @@ section
         &-title
             display: flex
             flex-direction: column
-            margin-bottom: gem(82)
+            margin-bottom: gem(42)
             h2, h3
                 display: flex
             h2
