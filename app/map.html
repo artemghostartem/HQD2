@@ -67,7 +67,7 @@
                 </div>
                 <div class="info-right">
                     <div class="info-left-element">
-                        <h2 class="desc-3 red up-text">Контакты</h2>
+                        <!-- <h2 class="desc-3 red up-text">Контакты</h2> -->
                         <h3 class="title-h3">Розница</h3>
                         <p class="desc-3 up-text">Хотите стать дилером HQD ?</p>
                         <p class="desc-3">Чтобы стать партнером HQD в Украине, свяжитесь с нами любым удобным для вас способом в разделе контактов</p>
@@ -92,16 +92,23 @@
                 <div class="map-title-drop">
                     <p class="desc-3">Выберите город:</p>
                     <div class="map-title-drop-city">
-                        <span class="desc-3">Киев</span><img src="img/dropArrow.svg" alt="">
+                        <div class="selected-city">
+                            <span class="desc-3">Киев</span>
+                            <img src="img/dropArrow.svg" alt="">
+                        </div>
+                        <div class="citys-dropdown">
+                            <span class="desc-3" data-points="kyiv">Киев</span>
+                            <span class="desc-3" data-points="moscow">Moscow</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="map-main">
                 <div class="map-main-pics">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10158.306177449003!2d30.503281295804598!3d50.46760962979571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce14eb202aff%3A0x6fce4a83368007cd!2z0J_QvtC00L7Quywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1608689574374!5m2!1sru!2sua" width="960" height="720" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <div id="map"></div>
                 </div>
                 <div class="map-main-text">
-                    <div class="map-main-text-element">
+                    <div class="map-main-text-element kyiv">
                         <div class="map-main-text-element-top">
                             <div class="map-main-text-element-info"><img src="img/time.svg" alt=""><span class="desc-3">Пн-Вс 10:00-18:00</span></div>
                             <div class="map-main-text-element-info"><img src="img/call.svg" alt=""><a href="#" class="desc-3">+38 (095) 111- 11-11</a></div>
@@ -114,7 +121,7 @@
                             <div class="map-main-text-element-info"><img src="img/track.svg" alt=""><span class="desc-2">Как добраться</span></div>
                         </div>
                     </div>
-                    <div class="map-main-text-element">
+                    <div class="map-main-text-element kyiv">
                         <div class="map-main-text-element-top">
                             <div class="map-main-text-element-info"><img src="img/time.svg" alt=""><span class="desc-3">Пн-Вс 10:00-18:00</span></div>
                             <div class="map-main-text-element-info"><img src="img/call.svg" alt=""><a href="#" class="desc-3">+38 (095) 111- 11-11</a></div>
@@ -127,20 +134,7 @@
                             <div class="map-main-text-element-info"><img src="img/track.svg" alt=""><span class="desc-2">Как добраться</span></div>
                         </div>
                     </div>
-                    <div class="map-main-text-element">
-                        <div class="map-main-text-element-top">
-                            <div class="map-main-text-element-info"><img src="img/time.svg" alt=""><span class="desc-3">Пн-Вс 10:00-18:00</span></div>
-                            <div class="map-main-text-element-info"><img src="img/call.svg" alt=""><a href="#" class="desc-3">+38 (095) 111- 11-11</a></div>
-                        </div>
-                        <div class="map-main-text-element-middle">
-                            <div class="map-main-text-element-info"><span class="desc-2">маг. Название магазина</span></div>
-                        </div>
-                        <div class="map-main-text-element-bottom">
-                            <div class="map-main-text-element-info"><img src="img/point.svg" alt=""><span class="desc-3">Ул. Иванова, 99</span></div>
-                            <div class="map-main-text-element-info"><img src="img/track.svg" alt=""><span class="desc-2">Как добраться</span></div>
-                        </div>
-                    </div>
-                    <div class="map-main-text-element">
+                    <div class="map-main-text-element moscow">
                         <div class="map-main-text-element-top">
                             <div class="map-main-text-element-info"><img src="img/time.svg" alt=""><span class="desc-3">Пн-Вс 10:00-18:00</span></div>
                             <div class="map-main-text-element-info"><img src="img/call.svg" alt=""><a href="#" class="desc-3">+38 (095) 111- 11-11</a></div>
@@ -218,7 +212,17 @@
         <a href="map.html"><span class="title-h3">Контакты</span></a>
     </div>
     <!-- End here -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB33HcYgZLrls9Uauth_nJGvDkiBk0lAqA"></script>
     <script src="js/scripts.min.js"></script>
+    <script>
+    $(function() {
+
+
+
+
+
+    });
+    </script>
     <!-- include additional scripts here AFTER app scripts will run -->
 </body>
 
