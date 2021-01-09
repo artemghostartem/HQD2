@@ -525,6 +525,8 @@ section
                     padding-left: gem(240)
                     width: gem(720)
                     flex-direction: column
+                    .carouselAboutPicsMob
+                        display: none 
                     &-element
                         padding-top: 0
                         max-width: gem(240)
@@ -644,6 +646,8 @@ section
                 display: flex
                 position: relative
                 width: gem(660)
+                .tastesPicMiddle, .tastesPicSmall
+                    display: none
                 img:nth-child(1)
                     display: flex
                     position: absolute
@@ -784,44 +788,86 @@ section
                 top: gem(-40)
 
 
-    .aboutPage 
-        .book
-            margin-top: 0
-        .book:first-child
-            margin-top: 0
-        .about-main
-            .cards
-                flex-direction: column
-                &-left, &-right, &-middle-top, &-middle-bottom
-                    padding: gem(80) gem(166)
-                    width: 100%
-                &-right
-                    .button
-                        bottom: gem(-120)
-            .sliderAbout
+    .aboutPage
+        .opening
+            height: auto
+            position: relative
+            &-img
+                position: relative
+                margin-top: gem(80)
+                overflow-x: hidden
+                width: 250%
+                left: gem(-570)
+                max-width: unset
+            &-main
+                position: absolute
+                top: gem(277)
+                left: gem(166)
+                z-index: 6
+                margin: 0
+                h1
+                    margin: 0
+        .about
+            .book
                 margin-top: 0
-                flex-direction: column-reverse
-                width: 100%
-                height: auto
-                &-text
-                    flex-direction: row
-                    margin: gem(80) gem(32) gem(80) gem(40)
-                    padding: 0
+            .book:first-child
+                margin-top: 0
+            &-main
+                .cards
+                    flex-direction: column
+                    &-left, &-right, &-middle-top, &-middle-bottom
+                        padding: gem(80) gem(166)
+                        width: 100%
+                    &-right
+                        .button
+                            bottom: gem(-120)
+                .sliderAbout
+                    margin-top: 0
+                    flex-direction: column-reverse
                     width: 100%
-                    &-element
-                        width: gem(192)
-                &-pics
-                    width: 100%
+                    height: auto
+                    &-text
+                        flex-direction: row
+                        margin: gem(80) gem(32) gem(80) gem(32)
+                        padding: 0
+                        width: 100%
+                        position: relative
+                        &-element
+                            width: gem(192)
+                        &-element:nth-child(1), &-element:nth-child(2)
+                            margin-right: gem(60)
+                        .progress
+                            position: absolute
+                            bottom: 0
+                            max-width: gem(704)
+                            width: 100%
+                            margin: 0
+                            &-element
+                                width: 100%
+                    &-pics
+                        width: 100%
+                    &-main
+                        display: flex
         .tastes
+            margin-top: gem(120)
+            height: unset
             &-main
                 justify-content: unset
                 height: auto
+                margin-top: gem(80)
+                .progress
+                    margin-left: gem(166)
+                    margin-right: gem(166)
+                    margin-top: 0
+                    &-element
+                        width: 100%
                 &-title
                     padding: 0 gem(166)
                 &-slider
                     flex-direction: column
                     padding: 0
                     height: auto
+                    margin-top: gem(80)
                     &-list
                         height: gem(209)
                         margin: gem(40) gem(166)
@@ -829,14 +875,16 @@ section
                             max-width: gem(158)
                     &-pics
                         width: 100%
-                        img:nth-child(2)
+                        height: gem(377)
+                        img
                             width: 100%
-                            height: gem(377)
+                            height: auto
                             top: 0
-                            overflow-y: hidden
                             position: relative
-                        img:nth-child(1)
+                        img
                             display: none
+                        .tastesPicMiddle
+                            display: flex
     .footer
         margin-top: 0
 @media all and (max-width: 480px)
@@ -883,6 +931,11 @@ section
             .book:first-child
                 .book-pics
                     height: gem(566)
+                    img
+                        width: auto
+                        max-width: unset
+                        position: relative
+                        left: gem(-180)
 
     .footer
         height: auto
@@ -943,9 +996,12 @@ section
             height: gem(366)
             &-img
                 height: gem(366)
+                margin-top: 0
+                width: 400%
+                left: gem(-500)
             &-main
-                h1
-                    margin-top: gem(148)
+                top: gem(148)
+                left: gem(85)
         .about
             margin-top: 0
             &-main
@@ -953,20 +1009,41 @@ section
                     &-text
                         position: relative
                         left: 0
+                        .progress
+                            max-width: gem(311)
+                        .carouselAboutPics
+                            display: none
+                        .carouselAboutPicsMob
+                            display: flex
                         &-element
+                            margin-right: gem(62)
+                        &-element:nth-child(1), &-element:nth-child(2)
+                            margin-right: gem(62)
                     &-pics
                         height: gem(534)
+                        .sliderArrows
+                            display: none
+                    &-main
+                        overflow-x: hidden
+                        margin-right: gem(62)
                 .cards
                     margin-top: 0
                     &-left, &-right, &-middle-top, &-middle-bottom
                         padding: gem(66) gem(31)
-
                 .book-pics
                     height: gem(533)
+                    img
+                        width: 150%
+                        max-width: unset
+                        position: relative
+                        left: gem(-60)
         .tastes
             margin-top: gem(120)
             &-main
                 margin-top: gem(65)
+                .progress
+                    margin-right: gem(32)
+                    margin-left: gem(32)
                 &-title
                     padding: 0 gem(31)
                 &-slider
@@ -974,6 +1051,11 @@ section
                         margin: 0
                         height: gem(337)
                         padding: gem(66) gem(32)
+                    &-pics
+                        .tastesPicMiddle
+                            display: none
+                        .tastesPicSmall
+                            display: flex
 
 .map
     flex-direction: column
