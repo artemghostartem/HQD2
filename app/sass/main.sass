@@ -1375,3 +1375,102 @@ section
     a:last-child
         margin-bottom: 0
 
+.agePage
+    background: var(--color-blue)
+    .age
+        display: flex
+        flex-direction: column
+        height: 100vh
+        justify-content: center
+        align-items: center
+        p
+            display: flex
+        p.title-h1
+            margin-bottom: gem(40)
+        p.title-h2
+            margin-bottom: gem(60)
+        &-buttons
+            display: flex
+            &-element
+                display: flex
+                height: gem(78)
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                transition: 0.3s all ease
+                span
+                    display: flex
+            &-element:first-child
+                width: gem(236)
+                margin-right: gem(40)
+                background: var(--color-black)
+            &-element:last-child
+                width: gem(264)
+                background: var(--color-gray2)
+            &-element:first-child:hover
+                box-shadow: 0 gem(4) gem(20) rgba(18, 22, 25, 0.2)
+                transition: 0.3s all ease
+            &-element:last-child:hover
+                background: var(--color-gray3)
+.thxPage
+    background: var(--color-blue)
+    .thx
+        display: flex
+        flex-direction: column
+        height: 100vh
+        justify-content: center
+        align-items: center
+        img
+            width: gem(300)
+            height: auto
+        p
+            display: flex
+        p.title-h2
+            margin-top: gem(60)
+            margin-bottom: gem(40)
+        p.desc-1
+            text-align: center
+            margin-bottom: gem(60)
+        &-button
+            display: flex
+            width: gem(155)
+            height: gem(78)
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            background: var(--color-black)
+            transition: 0.3s all ease
+        &-button:hover
+            box-shadow: 0 gem(4) gem(20) rgba(18, 22, 25, 0.2)
+            transition: 0.3s all ease
+.errorPage
+    background: var(--color-blue)
+    .error
+        display: flex
+        flex-direction: column
+        height: 100vh
+        justify-content: center
+        align-items: center
+        img
+            width: gem(300)
+            height: auto
+        p
+            display: flex
+        p.title-h2
+            margin-top: gem(60)
+            margin-bottom: gem(40)
+        p.desc-1
+            text-align: center
+            margin-bottom: gem(60)
+        &-button
+            display: flex
+            width: gem(155)
+            height: gem(78)
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            background: var(--color-black)
+            transition: 0.3s all ease
+        &-button:hover
+            box-shadow: 0 gem(4) gem(20) rgba(18, 22, 25, 0.2)
+            transition: 0.3s all ease
