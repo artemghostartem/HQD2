@@ -416,6 +416,24 @@ section
                         position: absolute
                         top: gem(-20)
                         opacity: 0
+                .input-massage
+                    display: flex
+                    position: relative
+                    height: gem(80)
+                    border: gem(1) solid var(--color-gray)
+                    margin-bottom: gem(40)
+                    margin-top: gem(30)
+                    span
+                        display: flex
+                        position: absolute
+                        top: gem(-30)
+                    .desc-3:last-child
+                        display: flex
+                        align-items: flex-start
+                        border: none
+                        max-width: 270
+                        padding: 0 gem(8)
+                        margin-bottom: 0
                 input
                     display: flex
                     width: gem(290)
@@ -429,7 +447,7 @@ section
                     border-bottom: var(--color-black) gem(1) solid
                 .input:nth-child(1)
                     margin-right: gem(20)
-                .input:nth-child(3)
+                .input:nth-child(3), .input-massage:nth-child(4)
                     margin-right: gem(290)
                 button
                     display: flex
@@ -548,6 +566,9 @@ section
                     img
                         width: 100%
                         height: auto
+                &-main
+                    &.sliderAbout-main
+                        margin-right: 0
             .cards
                 display: flex
                 margin-top: gem(240)
@@ -1093,7 +1114,8 @@ section
                 flex-direction: column
                 max-width: gem(436)
                 margin-right: gem(100)
-
+                h2
+                    margin-bottom: gem(8)
                 h3
                     margin-bottom: gem(12)
                 p:nth-child(3)
@@ -1139,6 +1161,8 @@ section
     &-title
         display: flex
         flex-direction: column
+        h2
+            margin-bottom: gem(8)
         &-drop
             display: flex
             &-city
@@ -1328,6 +1352,11 @@ section
                     &-info:first-child
                         margin-right: 0
                         margin-bottom: gem(20)
+    .footer .form-right form
+        .input-massage:nth-child(4), .footer .form-right form .input:nth-child(3)
+            margin-right: 0
+        .input-massage
+            width: 100%
 .mobileMenu
     display: flex
     position: fixed
