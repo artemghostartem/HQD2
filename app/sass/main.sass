@@ -427,13 +427,16 @@ section
                         display: flex
                         position: absolute
                         top: gem(-30)
-                    .desc-3:last-child
-                        display: flex
-                        align-items: flex-start
+                    textarea
                         border: none
-                        max-width: 270
                         padding: 0 gem(8)
                         margin-bottom: 0
+                        width: 100%
+                        height: 100%
+                        resize: none
+                        &:focus
+                            outline: none
+
                 input
                     display: flex
                     width: gem(290)
@@ -697,24 +700,63 @@ section
                 display: none
             .burger
                 display: flex
-                width: gem(24)
-                height: gem(1.5)
-                background: var(--color-black)
-                position: relative
-            .burger::before
-                content: ""
-                width: gem(24)
-                height: gem(1.5)
-                background: var(--color-black)
-                position: absolute
-                top: gem(8)
-            .burger::after
-                content: ""
-                width: gem(24)
-                height: gem(1.5)
-                background: var(--color-black)
-                position: absolute
-                top: gem(-8)
+                justify-content: center
+                align-items: center
+                width: gem(40)
+                height: gem(40)
+                span
+                    display: flex
+                    position: relative
+                    background: var(--color-black)
+                    width: gem(24)
+                    height: gem(1.5)
+                    content: ''
+                    transition: all 0.3s ease
+                    &:before
+                        content: ''
+                        position: absolute
+                        top: gem(6)
+                        background: var(--color-black)
+                        width: gem(24)
+                        height: gem(1.5)
+                        transition: all 0.3s ease
+                    &:after
+                        content: ''
+                        position: absolute
+                        bottom: gem(6)
+                        background: var(--color-black)
+                        width: gem(24)
+                        height: gem(1.5)
+                        transition: all 0.3s ease
+                &.active
+                    span
+                        background: none
+                        &:before
+                            top: 0
+                            transform: rotate(45deg)
+                        &:after
+                            bottom: 0
+                            transform: rotate(-45deg)
+            // .burger
+            //     display: flex
+            //     width: gem(24)
+            //     height: gem(1.5)
+            //     background: var(--color-black)
+            //     position: relative
+            // .burger::before
+            //     content: ""
+            //     width: gem(24)
+            //     height: gem(1.5)
+            //     background: var(--color-black)
+            //     position: absolute
+            //     top: gem(8)
+            // .burger::after
+            //     content: ""
+            //     width: gem(24)
+            //     height: gem(1.5)
+            //     background: var(--color-black)
+            //     position: absolute
+            //     top: gem(-8)
 
 
     .opening-main
@@ -1363,17 +1405,21 @@ section
     top: 0
     right: -100%
     width: 100%
+    height: 100vh
     flex-direction: column
     align-items: center
     padding-top: gem(146)
     padding-bottom: gem(90)
     background: var(--color-white)
     z-index: 9
+    transition: all 0.3s ease
     a
         display: flex
         margin-bottom: gem(35)
     a:last-child
         margin-bottom: 0
+    &.active
+        right: 0
 
 .agePage
     background: var(--color-blue)

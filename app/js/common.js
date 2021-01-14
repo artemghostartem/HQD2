@@ -106,6 +106,14 @@ $(function() {
         })
     }
 
+        let burger = document.querySelector('.burger')
+        let menu = document.querySelector('.mobileMenu')
+
+        burger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            menu.classList.toggle('active')
+        })
+
    
 
    //MAP
@@ -165,6 +173,7 @@ $(function() {
         }
 
 
+
         //citys changer
         // let citysVariations = document.querySelectorAll('.')
         let selectedCity = document.querySelector('.selected-city span')
@@ -202,5 +211,7 @@ $(function() {
                     initialBlocks[i].classList.add('visible');
             }
         google.maps.event.addDomListener(window, 'load', init);
+        //menu
+
 
 });
