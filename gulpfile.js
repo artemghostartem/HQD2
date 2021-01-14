@@ -47,6 +47,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery-3.5.1.min.js',
 		'app/libs/owlcarousel/owl.carousel.min.js',
+		'app/libs/scroll/jquery.malihu.PageScroll2id.min.js',
 		'app/js/common.js', // Always at the end
 		], { allowEmpty: true })
 	.pipe(concat('scripts.min.js'))

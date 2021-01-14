@@ -26,8 +26,7 @@ $(function() {
     $('.indexPage .sliderArrows-prev').click(function() {
         owlIndexPics.trigger('prev.owl.carousel');
         owlIndexText.trigger('prev.owl.carousel');
-        // progresMainBarDec()
-        progressingBar()
+        
     })
 
     // Go to the previous item
@@ -35,7 +34,7 @@ $(function() {
         owlIndexPics.trigger('next.owl.carousel');
         owlIndexText.trigger('next.owl.carousel');
         // progresMainBarInc()
-        progressingBar()
+       
     })
 
     let carouselAboutText = $('.carouselAboutText')
@@ -44,6 +43,9 @@ $(function() {
         loop: false,
         nav: false,
         dots: false,
+        drag: false,
+        mouseDrag: false,
+        touchDrag: false,
     })
 
     let carouselAboutPics = $('.carouselAboutPics')
@@ -52,6 +54,9 @@ $(function() {
         loop: false,
         nav: false,
         dots: false,
+        drag: false,
+        mouseDrag: false,
+        touchDrag: false,
     })
 
     let carouselAboutPicsMob = $('.carouselAboutPicsMob')
@@ -67,14 +72,35 @@ $(function() {
         carouselAboutPics.trigger('prev.owl.carousel');
         progressingBar()
     })
+    
     $('.aboutPage .sliderArrows-next').click(function() {
         carouselAboutPics.trigger('next.owl.carousel');
         carouselAboutText.trigger('next.owl.carousel');
         progressingBar()
     })
 
+    let carousels = [owlIndexPics, owlIndexText, carouselAboutText, carouselAboutPics, carouselAboutPicsMob]
+
+    for(let i = 0; i < carousels.length; i++) {
+        carousels[i].on('changed.owl.carousel', function(e) {
+            setTimeout(function () {
+                progressingBar();
+                console.log('hi')
+            },100)
+        });
+    }
+
+    if (window.innerWidth >768) {
+            $('.sliderAbout-text .carouselAboutPics').addClass('carouselPics')
+        } else {
+            $('.carouselAboutPicsMob').addClass('carouselPics')
+    }
     //progess bar
     let mainPageCasouselItems = document.querySelectorAll('.carouselPics .owl-item')
+
+    
+
+
     let mainPageProgressLine = document.querySelector('.progressCarousel .progress-element-redLine')
     let itemsLength = mainPageCasouselItems.length
 
@@ -87,6 +113,16 @@ $(function() {
                 mainPageProgressLine.style.width = nextWidth
             }
         }
+    }
+
+    function initialProgressBar() {
+        let initialWidth = 100 / itemsLength
+        let nextWidth = initialWidth + '%'
+        mainPageProgressLine.style.width = nextWidth
+    }
+
+    if (mainPageCasouselItems.length > 0) {
+        initialProgressBar()
     }
 
     let tastys = document.querySelectorAll('.progress-element-stage-button')
@@ -106,6 +142,7 @@ $(function() {
         })
     }
 
+
         let burger = document.querySelector('.burger')
         let menu = document.querySelector('.mobileMenu')
 
@@ -113,6 +150,14 @@ $(function() {
             this.classList.toggle('active');
             menu.classList.toggle('active')
         })
+
+
+    //pageScroll
+    let headerHeight = document.querySelector('header').getBoundingClientRect().height
+    console.log(headerHeight)
+    $("a[rel='m_PageScroll2id']").mPageScroll2id({
+        offset: headerHeight
+    });
 
    
 
@@ -157,6 +202,8 @@ $(function() {
                     mapsInfos[i].classList.add('active')
 
                 });
+                locations[0].marker.setIcon(iconActive)
+                mapsInfos[0].classList.add('active')
             }
             for (let i = 0; i < mapsInfos.length; i++) {
                 mapsInfos[i].addEventListener('click', function() {
