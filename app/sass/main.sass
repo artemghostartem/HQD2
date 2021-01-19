@@ -429,9 +429,10 @@ section
                         top: gem(-30)
                     textarea
                         border: none
-                        padding: 0 gem(8)
+                        padding: gem(10) gem(8)
                         margin-bottom: 0
-                        width: 100%
+                        width: gem(290)
+
                         height: 100%
                         resize: none
                         &:focus
@@ -1423,6 +1424,15 @@ section
 
 .agePage
     background: var(--color-blue)
+    position: fixed
+    display: none   
+    z-index: 999
+    width: 100%
+    height: 100vh
+    transition: all 0.3s ease
+    &.inactivated
+        opacity: 0
+        pointer-events: none
     .age
         display: flex
         flex-direction: column
@@ -1450,14 +1460,14 @@ section
                 width: gem(236)
                 margin-right: gem(40)
                 background: var(--color-black)
-            &-element:last-child
-                width: gem(264)
-                background: var(--color-gray2)
+            // &-element:last-child
+                // width: gem(264)
+                // background: var(--color-gray2)
             &-element:first-child:hover
                 box-shadow: 0 gem(4) gem(20) rgba(18, 22, 25, 0.2)
                 transition: 0.3s all ease
-            &-element:last-child:hover
-                background: var(--color-gray3)
+            // &-element:last-child:hover
+                // background: var(--color-gray3)
 .thxPage
     background: var(--color-blue)
     .thx

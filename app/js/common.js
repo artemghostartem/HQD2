@@ -1,5 +1,22 @@
 $(function() {
 
+    
+    let ageverified = sessionStorage.getItem("ageverified");
+    // console.log(ageverified)
+
+    if(ageverified == 'yes') {
+        $('.agePage').fadeOut(0)
+    } else {
+        $('.agePage').fadeIn(0)
+    }
+
+    $('.age-buttons').on('click', function() {
+        $('.agePage').fadeOut(300)
+        sessionStorage.setItem("ageverified", "yes");
+    })
+
+
+
     let owlIndexPics = $('.carouselIndexPics')
     owlIndexPics.owlCarousel({
         items: 1,
